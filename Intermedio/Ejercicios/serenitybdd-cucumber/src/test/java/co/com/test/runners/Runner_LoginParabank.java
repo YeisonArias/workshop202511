@@ -15,5 +15,5 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber-report/cucumber.json"
         }
 )
-public class Runner {
+public class Runner_LoginParabank {
 }
