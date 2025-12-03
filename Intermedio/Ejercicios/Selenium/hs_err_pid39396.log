@@ -1,0 +1,199 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 264241152 bytes for Failed to commit area from 0x00000000e0000000 to 0x00000000efc00000 of length 264241152.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3391), pid=39396, tid=33644
+#
+# JRE version:  (11.0.28+6) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.28+6-LTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dorg.gradle.internal.worker.tmpdir=C:\WS JAVA\202511\Intermedio\Ejercicios\Selenium\build\tmp\test\work -Dorg.gradle.native=false -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 4'
+
+Host: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.4768)
+Time: Tue Dec  2 16:50:31 2025 SA Pacific Standard Time elapsed time: 0.017206 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002014e722000):  JavaThread "Unknown thread" [_thread_in_vm, id=33644, stack(0x000000d7f3d00000,0x000000d7f3e00000)]
+
+Stack: [0x000000d7f3d00000,0x000000d7f3e00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6464ca]
+V  [jvm.dll+0x7dad19]
+V  [jvm.dll+0x7dc419]
+V  [jvm.dll+0x7dcb03]
+V  [jvm.dll+0x269e15]
+V  [jvm.dll+0x6436d9]
+V  [jvm.dll+0x637bb5]
+V  [jvm.dll+0x325e9c]
+V  [jvm.dll+0x325d22]
+V  [jvm.dll+0x32a8f6]
+V  [jvm.dll+0x372d72]
+V  [jvm.dll+0x3727d1]
+V  [jvm.dll+0x3015d8]
+V  [jvm.dll+0x3026d5]
+V  [jvm.dll+0x7b3e27]
+V  [jvm.dll+0x7b55ef]
+V  [jvm.dll+0x380189]
+V  [jvm.dll+0x795f8f]
+V  [jvm.dll+0x3f0aa7]
+V  [jvm.dll+0x3f3011]
+C  [jli.dll+0x52ef]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x3c34c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000002014c4392a0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002014e73c000 GCTaskThread "GC Thread#0" [stack: 0x000000d7f3e00000,0x000000d7f3f00000] [id=29656]
+  0x000002014e753000 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000d7f3f00000,0x000000d7f4000000] [id=27780]
+  0x000002014e755800 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000d7f4000000,0x000000d7f4100000] [id=2068]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8a8562017]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002014e720b70] Heap_lock - owner thread: 0x000002014e722000
+
+Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: Non-zero based: 0x00000000e0000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.011 Loaded shared library C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff671f10000 - 0x00007ff671f1e000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\java.exe
+0x00007ff965b00000 - 0x00007ff965d67000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff964e00000 - 0x00007ff964ec9000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff963490000 - 0x00007ff963880000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff963190000 - 0x00007ff9632db000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff95fa10000 - 0x00007ff95fa2b000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\VCRUNTIME140.dll
+0x00007ff95fb10000 - 0x00007ff95fb27000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\jli.dll
+0x00007ff965650000 - 0x00007ff965815000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9632e0000 - 0x00007ff963307000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff948100000 - 0x00007ff94839a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.4768_none_3e0c112ce331287c\COMCTL32.dll
+0x00007ff965620000 - 0x00007ff96564b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff964040000 - 0x00007ff9640e9000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff963050000 - 0x00007ff963188000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff962fa0000 - 0x00007ff963043000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff965820000 - 0x00007ff96584f000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff95fa00000 - 0x00007ff95fa0c000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\vcruntime140_1.dll
+0x00007ff92a4a0000 - 0x00007ff92a52d000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\msvcp140.dll
+0x00007ff8a8250000 - 0x00007ff8a8e15000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\server\jvm.dll
+0x00007ff964ed0000 - 0x00007ff964f84000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff964680000 - 0x00007ff964726000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff964130000 - 0x00007ff964248000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff964600000 - 0x00007ff964674000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff964730000 - 0x00007ff964738000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff954170000 - 0x00007ff9541a5000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff95e1a0000 - 0x00007ff95e1ab000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff961840000 - 0x00007ff96185b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff95f950000 - 0x00007ff95f960000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\verify.dll
+0x00007ff95ff20000 - 0x00007ff960161000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff964270000 - 0x00007ff9645f5000 	C:\WINDOWS\System32\combase.dll
+0x00007ff9659d0000 - 0x00007ff965ab0000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff944d10000 - 0x00007ff944d53000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff962db0000 - 0x00007ff962e49000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff949170000 - 0x00007ff949198000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\java.dll
+0x00007ff95f8e0000 - 0x00007ff95f8ea000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\jimage.dll
+0x00007ff95f510000 - 0x00007ff95f528000 	C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.4768_none_3e0c112ce331287c;C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin\server
+
+VM Arguments:
+jvm_args: -Dorg.gradle.internal.worker.tmpdir=C:\WS JAVA\202511\Intermedio\Ejercicios\Selenium\build\tmp\test\work -Dorg.gradle.native=false -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea 
+java_command: worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 4'
+java_class_path (initial): C:\Users\yarias\.gradle\caches\8.6\workerMain\gradle-worker.jar;C:\WS JAVA\202511\Intermedio\Ejercicios\Selenium\build\classes\java\test;C:\WS JAVA\202511\Intermedio\Ejercicios\Selenium\build\resources\test;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\com.codoid.products\fillo\1.21\af0580fe9e3256546ecc817fd1757de55952f837\fillo-1.21.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\org.seleniumhq.selenium\selenium-java\4.38.0\2cc38c8dbef9d6e8774f05c2d2e8088180858ed4\selenium-java-4.38.0.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\io.github.bonigarcia\webdrivermanager\6.3.3\faaa8dad9d1571412605fe0bcdab9499336297dd\webdrivermanager-6.3.3.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\org.apache.poi\poi-ooxml\5.5.0\2496553d4e3a5d647465b0f3054672a0114764c6\poi-ooxml-5.5.0.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\com.sun.mail\jakarta.mail\2.0.1\96d3645f02a92bcc5e7ae1ff037151e44179f230\jakarta.mail-2.0.1.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\junit\junit\4.13.2\8ac9e16d933b6fb43bc7f576336b8f4d7eb5ba12\junit-4.13.2.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\org.seleniumhq.selenium\selenium-chrome-driver\4.38.0\47d3827d984ff3b8c995dba34abf0ac9c72fa07d\selenium-chrome-driver-4.38.0.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\org.seleniumhq.selenium\selenium-devtools-v140\4.38.0\4198864cdb524278b8ef86ac263c20fdedb6294b\selenium-devtools-v140-4.38.0.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\org.seleniumhq.selenium\selenium-devtools-v141\4.38.0\4d71b5bb50420d4c39867953336d9eea2000d4d\selenium-devtools-v141-4.38.0.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\org.seleniumhq.selenium\selenium-devtools-v142\4.38.0\54ace5244e0179350f36e321d98c041e64734683\selenium-devtools-v142-4.38.0.jar;C:\Users\yarias\.gradle\caches\modules-2\files-2.1\org.seleniumhq.selenium\selenium-edge-driver\4.38.0\322f97cdc53dd57e657f24e9051e101a6366af5\selenium-edge-driver-
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 536870912                                 {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Amazon Corretto\jdk11.0.28_6
+PATH=C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Python313\Scripts\;C:\Program Files\Python313\;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\gradle-8.6\bin;C:\Program Files\Amazon Corretto\jdk11.0.28_6\bin;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Android\Sdk\platform-tools;C:\Android\Sdk\build-tools;C:\Android\Sdk\platform-tools;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files\PostgreSQL\16\bin;C:\Program Files\RedHat\Podman\;C:\WINDOWS\System32\OpenSSH\;C:\Windows\System32\OpenSSH\;C:\Users\yarias\AppData\Roaming\Python\Python313\Scripts;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\WS Auto\apache-maven-3.9.11\bin;C:\Program Files\Git\cmd;C:\Users\yarias\.console-ninja\.bin;C:\Users\yarias\AppData\Local\Microsoft\WindowsApps;C:\Users\yarias\Downloads\sonarqube-10.3.0.82913\sonarqube-10.3.0.82913;C:\Program Files\Amazon Corretto\jdk11.0.24_8\bin;C:\Users\yarias\AppData\Local\Programs\Microsoft VS Code\bin;C:\tools\dart-sdk\bin;C:\Users\yarias\AppData\Local\Pub\Cache\bin;C:\tools\sdk\flutter\bin;C:\tools\sdk\flutter\bin\cache\dart-sdk\bin;C:\Users\yarias\AppData\Roaming\npm;C:\Users\yarias\AppData\Local\Microsoft\WindowsApps;C:\Users\yarias\AppData\Roaming\Python\Python312\Scripts;C:\Users\yarias\AppData\Local\Microso
+USERNAME=yarias
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+TMP=C:\Users\yarias\AppData\Local\Temp
+TEMP=C:\Users\yarias\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 26100 (10.0.26100.4768)
+OS uptime: 1 days 20:11 hours
+Hyper-V role detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0xbc, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, evex, sha, fma
+
+Memory: 4k page, system-wide physical 16122M (1483M free)
+TotalPageFile size 36176M (AvailPageFile size 15M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 60M, peak: 311M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.28+6-LTS) for windows-amd64 JRE (11.0.28+6-LTS), built on Jul  8 2025 18:31:33 by "Administrator" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.

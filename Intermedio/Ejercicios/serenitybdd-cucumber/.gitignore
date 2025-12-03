@@ -1,0 +1,38 @@
+
+# Archivos y carpetas de compilación
+/build/
+out/
+target/
+
+# Archivos de dependencias y cache de Gradle
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Archivos de configuración local
+*.iml
+.idea/
+*.class
+*.log
+
+# Archivos generados por Serenity y Cucumber
+serenity-output/
+target/site/serenity/
+target/cucumber-report/
+target/cucumber-html-reports/
+target/cucumber.json
+target/*.xml
+
+# Reportes y resultados de pruebas
+reports/
+test-output/
+*.html
+*.json
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.swp

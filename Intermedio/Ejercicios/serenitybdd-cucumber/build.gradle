@@ -1,0 +1,83 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        // Necesario para encontrar el plugin de Serenity
+        maven { url "https://plugins.gradle.org/m2/" }
+        // Opcional, pero útil para dependencias antiguas
+        jcenter()
+    }
+    dependencies {
+        // Plugin de Serenity compatible con tu versión
+        classpath "net.serenity-bdd:serenity-gradle-plugin:3.9.8"
+    }
+}
+
+apply plugin: "java"
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+
+group = "com.ejemplo"
+version = "1.0.0"
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = '3.9.8'
+    cucumberVersion = '7.15.0'
+    // Puedes dejar junitVersion si quieres usar JUnit5 en el futuro,
+    // pero no es necesario para Serenity + Cucumber + JUnit4
+    junitVersion    = '5.10.0'
+}
+
+dependencies {
+
+    // ──────────────────────────────────────────────
+    // SERENITY CORE + CUCUMBER + JUNIT4
+    // ──────────────────────────────────────────────
+
+    // Serenity base
+    implementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+
+    // Serenity + Cucumber (usa JUnit4 internamente)
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+
+    // Necesario para runner @RunWith(CucumberWithSerenity.class)
+    implementation "junit:junit:4.13.2"
+
+    // ──────────────────────────────────────────────
+    // SCREENPLAY + SELENIUM (opcional si usarás UI)
+    // ──────────────────────────────────────────────
+    testImplementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityVersion}"
+
+    // ──────────────────────────────────────────────
+    // ASSERTIONS
+    // ──────────────────────────────────────────────
+    testImplementation "org.assertj:assertj-core:3.24.2"
+
+    // ──────────────────────────────────────────────
+    // Gestión del Driver WebDriverManager
+    // ──────────────────────────────────────────────
+    implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+    // ──────────────────────────────────────────────
+    // Proveedor de logging configurado
+    // ──────────────────────────────────────────────
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+}
+
+test {
+    // Gradle detectará y ejecutará los tests JUnit4 (el runner de Serenity)
+    systemProperty "cucumber.filter.tags",
+            System.getProperty("cucumber.filter.tags", "")
+}
+
+serenity {
+    testRoot("src/test/java")
+    requirementsBaseDir = "src/test/resources/features"
+}
