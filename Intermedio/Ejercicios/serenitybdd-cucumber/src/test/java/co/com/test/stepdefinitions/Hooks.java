@@ -13,6 +13,5 @@ public class Hooks {
         // Configuración personalizada del WebDriver
         WebDriverManager.chromedriver().setup();
         getDriver().manage().window().maximize();
-        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 }

@@ -19,13 +19,26 @@ public class LoginParabankStepDefinition {
 
     @When("el usuario ingresa sus credenciales")
     public void elUsuarioIngresaSusCredenciales() {
-
+        loginParabankSteps.ingresarCredencialesDeLoguin();
     }
 
     @Then("el usuario es redirigido a la pagina de bienvenida")
     public void elUsuarioEsRedirigidoALaPaginaDeBienvenida() {
-
+        loginParabankSteps.elUsuarioEsRedirigidoALaPaginaDeBienvenida();
     }
+
+    @When("el usuario el usuario {string} y la clave {string}")
+    public void elUsuarioElUsuarioYLaClave(String user, String password) {
+        loginParabankSteps.accederConLasCredenciales(user, password);
+    }
+    @Then("el usuario visualiza el mensaje de bienvenida {string}")
+    public void elUsuarioVisualizaElMensajeDeBienvenida(String mensaje) {
+        loginParabankSteps.elUsuarioVisualizaElMensajeDeBienvenida(mensaje);
+    }
+
+
+
+
 
 
 }

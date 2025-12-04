@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/login_parabank.feature",
         glue = "co.com.test.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@Test",
+        tags = "@Test3",
         plugin = {
                 "pretty",
                 "json:target/cucumber-report/cucumber.json"
