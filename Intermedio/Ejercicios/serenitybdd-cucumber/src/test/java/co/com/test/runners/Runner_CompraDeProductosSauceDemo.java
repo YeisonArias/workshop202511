@@ -6,14 +6,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/parabank/login_parabank.feature",
+        features = "src/test/resources/features/saucedemo/compra_de_productos.feature",
         glue = "co.com.test.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@Test3",
+        tags = "@Test",
         plugin = {
                 "pretty",
                 "json:target/cucumber-report/cucumber.json"
         }
 )
-public class Runner_LoginParabank {
+public class Runner_CompraDeProductosSauceDemo {
 }

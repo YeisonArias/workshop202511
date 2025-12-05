@@ -1,11 +1,9 @@
-package co.com.test.stepdefinitions;
+package co.com.test.stepdefinitions.parabank;
 
 import co.com.test.steps.LoginParabankSteps;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import net.thucydides.core.annotations.Steps;
 
 public class LoginParabankStepDefinition {
